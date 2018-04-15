@@ -1,13 +1,12 @@
 ﻿<h1>GW2 Daily</h1>
-<p>
-    @foreach (var daily in Model["pve"])
+
+@foreach (var daily in Model["pve"])
+{
+    <div>@daily.Id</div>
+    <div>@daily.Level.Min - @daily.Level.Max</div>
+    @foreach (string access in daily.RequiredAccess)
     {
-        <div>@daily.Id</div>
-        <div>@daily.Level.Min - @daily.Level.Max</div>
-        @foreach (string access in daily.RequiredAccess)
-        {
-            <div>@access</div>
-        }
-        <br />
+        <div>@access</div>
     }
-</p>
+    <br />
+}

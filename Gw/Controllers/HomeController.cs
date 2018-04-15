@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 
 namespace Gw.Controllers
 {
-    //[Route("[controller]/[action]")]
     public class HomeController : Controller
     {
         public IActionResult Index()
@@ -20,10 +19,10 @@ namespace Gw.Controllers
         {
             var uri = "https://api.guildwars2.com/v2/achievements/daily";
 
-            HttpClient client = new HttpClient();
-
             string responseBody = await client.GetStringAsync(uri);
             return responseBody;
         }
+
+        private static HttpClient client = new HttpClient();
     }
 }

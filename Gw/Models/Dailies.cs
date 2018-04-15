@@ -6,7 +6,7 @@ namespace Gw.Models
     public partial class Dailies
     {
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public int Id { get; set; }
 
         [JsonProperty("level")]
         public Level Level { get; set; }
@@ -30,11 +30,11 @@ namespace Gw.Models
             JsonConvert.DeserializeObject<Dictionary<string, List<Dailies>>>(json, Converter.Settings);
     }
 
-    public static class Serialize
-    {
-        public static string ToJson(this Dictionary<string, List<Dailies>> self) =>
-            JsonConvert.SerializeObject(self, Converter.Settings);
-    }
+    //public static class Serialize
+    //{
+    //    public static string ToJson(this Dictionary<string, List<Dailies>> self) =>
+    //        JsonConvert.SerializeObject(self, Converter.Settings);
+    //}
 
     public class Converter
     {
